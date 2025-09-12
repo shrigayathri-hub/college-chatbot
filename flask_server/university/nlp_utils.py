@@ -60,10 +60,16 @@ matcher.add("mtech", [[{"LOWER": "mtech"}], [
 matcher.add("btech", btech_pattern)
 
 
-def course_matcher(sentence):
-    doc = nlp(sentence)
-    matches = matcher(doc)
+# def course_matcher(sentence):
+#     doc = nlp(sentence)
+#     matches = matcher(doc)
 
-    for match_id, start, end in matches:
-        string_id = nlp.vocab.strings[match_id]  # 'mtech or btech'
-        return string_id
+#     for match_id, start, end in matches:
+#         string_id = nlp.vocab.strings[match_id]  # 'mtech or btech'
+#         return string_id
+def course_matcher(msg):
+    msg_lower = msg.lower()
+    for course in Course.query.all():
+        if course.name.lower() in msg_lower:
+            return course.name
+    return None

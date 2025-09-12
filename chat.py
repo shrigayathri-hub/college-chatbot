@@ -25,6 +25,10 @@ model.to(device)
 
 
 def chatbot_response(sentence):
+    # Custom check for syllabus queries
+    if "syllabus" in sentence.lower():
+        return ("syllabus_query", "courses")  # Let backend handle syllabus logic
+
     tokenized_sentence = tokenize(sentence)
     X = bag_of_words(tokenized_sentence, all_words)
     X = X.reshape(1, X.shape[0])
@@ -43,9 +47,5 @@ def chatbot_response(sentence):
         for intent in intents['intents']:
             if tag == intent['tag']:
                 return (random.choice(intent['responses']), tag)
-            elif tag == "admission":
-                response = "Admission starts in June. You need to fill out the online form and submit required documents. For details, visit our admission page."
-            elif tag == "infrastructure":
-                response = "Our campus has modern labs, a large library, sports complex, and Wi-Fi enabled classrooms."
         return ("I am unable to understand that..", 'greetings')
 print('hi')

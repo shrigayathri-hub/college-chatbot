@@ -20,26 +20,29 @@ def normal_chat():
         return jsonify({'response': response, 'tag': tag, 'url': 'result/'})
 
     if tag == 'courses':
-        course = course_matcher(msg)
-        if course is not None:
-            course_details = Course.query.filter_by(name=course).first()
-            if course_details:
-                response = f"{course_details.name} takes {course_details.duration}"
-                link = f"http://127.0.0.1:5000/courses/syllabus/{course_details.id}/"
-                return jsonify({
-                    'response': response,
-                    'tag': tag,
-                    "data": {
-                        "filename": f"{course_details.name} syllabus",
-                        "link": link
-                    }
-                })
+        # If syllabus query detected
+        if response == "syllabus_query":
+            course = course_matcher(msg)
+            if course is not None:
+                course_details = Course.query.filter_by(name=course).first()
+                if course_details and course_details.syllabus:
+                    link = f"http://127.0.0.1:5000/courses/syllabus/{course_details.id}/"
+                    response = f"Here is the syllabus for {course_details.name}:"
+                    return jsonify({
+                        'response': response,
+                        'tag': tag,
+                        "data": {
+                            "filename": f"{course_details.name} syllabus",
+                            "link": link
+                        }
+                    })
+                else:
+                    response = f"Syllabus for '{course}' not found."
+                    return jsonify({'response': response, 'tag': tag})
             else:
-                response = f"Course '{course}' not found. Please check the course name."
-        else:
-            courses = Course.query.all()
-            response = "Available courses:\n" + "\n".join([course.name for course in courses])
-
+                response = "Please specify the course name for the syllabus."
+                return jsonify({'response': response, 'tag': tag})
+        # ...existing course logic...
     if (tag == "holidays"):
         holiday = Holidays.query.first()
         link = f'http://127.0.0.1:5000/holidays/download/{holiday.id}/'

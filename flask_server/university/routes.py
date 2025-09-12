@@ -173,6 +173,6 @@ def coursesupdate(id):
 def syllabus_api(id):
     course = Course.query.get(id)
     if course and course.syllabus:
-        return send_file(BytesIO(course.syllabus), download_name=f"{course.name}_syllabus.pdf")
+        return send_file(BytesIO(course.syllabus), download_name=f"{course.name}_syllabus.txt")
     else:
         return "Syllabus not found", 404
