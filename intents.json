@@ -1,0 +1,361 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Good day"
+      ],
+      "responses": [
+        "Hey :-)",
+        "Hello, thanks for visiting",
+        "Hi there, what can I do for you?",
+        "Hi there, how can I help?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thanks",
+        "Thank you",
+        "That's helpful",
+        "Thank's a lot!",
+        "Okay"
+      ],
+      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+    },
+    {
+      "tag": "holidays",
+      "patterns": [
+        "When are holidays ? ",
+        "What kinds of holidays are there?",
+        "What holidays do we have?",
+        "tell more about holidays",
+        "holidays when ???",
+        "which days are holidays ?",
+        "How many days can we get after seach sem ?" ,
+        "Can we get study leave ?",
+        "what are the biggest holidays we can get ??",
+        "Are there any department wise special holiday ?"
+      ],
+      "responses": [""]
+    },
+    {
+      "tag": "faculty",
+      "patterns": [
+        "Do you know the teachers ?",
+        "Who are the teachers ?",
+        "Can you tell more about teachers?",
+        "Tell me about teachers  ",
+        "more info on teachers",
+        "what are the teachers ?",
+        "tell more about the teachers",
+        "narula teachers",
+        "who is the the principal and what about the placement officer??" 
+      ],
+      "responses": [
+        "Our Prinicipal is Dr. Maitreyi Ray Kanjilal \n Our Placement Cell has Biswarup Bhattacharjee , Abhijit Nandy , Debanjan Mitra. "
+      ]
+    },
+    {
+      "tag": "courses",
+      "patterns": [
+        "Which Courses are offered here",
+        "tell me more about BCA",
+        "More info on BTECH please",
+        "What is MTECH ?",
+        "What is BCA ?",
+        "When do BTECH gets completed ?",
+        "How long does MCA take ?",
+        "which Course are best here ?" ,
+        "what about the fees Stucture ?" ,
+        "Are there any medical course ?" ,
+        "how many time will take to complete those course ?"
+      ],
+      "responses": ["Course related queries", "MCA takes 2years"]
+    },
+    {
+      "tag": "funny",
+      "patterns": [
+        "Tell me a joke!",
+        "Tell me something funny!",
+        "Do you know a joke?"
+      ],
+      "responses": [
+        "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
+        "What did the buffalo say when his son left for college? heeee said Bison."
+      ]
+    },
+    {
+      "tag": "result",
+      "patterns": [
+        "WHAT is my SGPA this sem ?",
+        "What is my CGPA this sem",
+        "Do you know my result?",
+        "Do you know my CGPA?",
+        "Do you know my curent cgpa?",
+        "tell me my cgpa?",
+        "tell me my curent sgpa?",
+        "tell me my result",
+        "what is my result"
+      ],
+      "responses": ["tell me your student id , example : \n434121010021"]
+    },
+   {
+  "tag": "fees_scholarships",
+  "patterns": [
+    "What is the fee structure for my course?",
+    "Are there any additional charges (lab, library, hostel)?",
+    "How can I pay the fees online?",
+    "Is there an installment payment option?",
+    "Are scholarships or financial aid available?",
+    "What is the eligibility for scholarships?",
+    "How do I apply for a scholarship?",
+    "Are there any fee waivers for meritorious students?",
+    "Can fees be refunded if I withdraw mid-semester?",
+    "Who should I contact for fee-related queries?"
+  ],
+  "responses": [
+    "Fee structure varies by course. Please check the fees page for details.",
+    "Additional charges like lab, library, and hostel fees apply depending on your course.",
+    "Fees can be paid online via our payment portal.",
+    "Yes, installment payment options are available for certain courses.",
+    "Scholarships and financial aid are available for eligible students.",
+    "Eligibility for scholarships depends on merit and financial criteria.",
+    "You can apply for scholarships through the student portal or the financial aid office.",
+    "Meritorious students may be eligible for fee waivers. Contact the admin office.",
+    "Fee refunds follow the college policy. Contact the accounts office for details.",
+    "For fee-related queries, please contact the accounts or admissions office."
+  ]
+},
+{
+  "tag": "exams_results",
+  "patterns": [
+    "When are the semester exams scheduled?",
+    "How do I check my exam timetable?",
+    "How can I apply for exam re-evaluation?",
+    "What is the passing criteria?",
+    "When will results be published?",
+    "Can I download my mark sheet online?",
+    "How do I get my grade transcript?",
+    "What to do if I lose my result card?",
+    "Are there supplementary or re-exam options?",
+    "Whom should I contact for exam-related issues?"
+  ],
+  "responses": [
+    "Exam schedules are published on the exams page each semester.",
+    "You can check your timetable on the student portal.",
+    "Re-evaluation can be applied for via the examination office.",
+    "Passing criteria follow the course grading guidelines.",
+    "Results are published online on the student portal.",
+    "Mark sheets can be downloaded online after result declaration.",
+    "Grade transcripts are available from the registrar or online portal.",
+    "If you lose your result card, request a duplicate from the exams office.",
+    "Supplementary exams are offered for failed subjects. Check the exam notice.",
+    "For exam-related issues, contact the examination office."
+  ]
+},
+{
+  "tag": "faculty_departments",
+  "patterns": [
+    "Who are the faculty members of my department?",
+    "How can I contact a specific teacher?",
+    "What are the office hours of faculty members?",
+    "Which department handles student counseling?",
+    "Are faculty profiles available online?",
+    "Can I request guidance for project work from faculty?",
+    "Are there guest lectures or workshops conducted regularly?",
+    "How do I report issues with faculty interaction?",
+    "Which faculty handles internships or placements?",
+    "How can I know about department activities?"
+  ],
+  "responses": [
+    "Faculty members for each department are listed on the website.",
+    "You can contact teachers via email or during office hours.",
+    "Office hours are specified on the department page.",
+    "Student counseling is handled by the student affairs department.",
+    "Faculty profiles and research details are available online.",
+    "Project guidance can be requested from the concerned faculty member.",
+    "Guest lectures and workshops are scheduled regularly; check announcements.",
+    "Report any issues with faculty to the department head or student affairs.",
+    "Internships and placements are coordinated by the training and placement cell.",
+    "Department activities are listed on the respective department's notice board or website."
+  ]
+},
+{
+  "tag": "campus_facilities",
+  "patterns": [
+    "What are the library timings?",
+    "How do I issue books from the library?",
+    "Are there computer labs or Wi-Fi facilities available?",
+    "Are hostel accommodations available?",
+    "What are the hostel rules and fees?",
+    "Are there sports and recreational facilities?",
+    "Is there a cafeteria on campus?",
+    "Are there medical facilities on campus?",
+    "How can I book classrooms or seminar halls?",
+    "Are parking facilities available for students?"
+  ],
+  "responses": [
+    "Library timings are available on the library page.",
+    "Books can be issued using your student ID at the library counter.",
+    "Computer labs and Wi-Fi are available in designated areas.",
+    "Hostel accommodations are provided on campus for eligible students.",
+    "Hostel rules and fees are detailed in the hostel handbook.",
+    "Sports and recreational facilities are available; check the sports office.",
+    "Yes, there is a cafeteria offering meals and snacks.",
+    "Medical facilities are available on campus for students.",
+    "Classrooms and seminar halls can be booked via the administration office.",
+    "Parking facilities are available for students with proper permits."
+  ]
+},
+{
+  "tag": "placements_career_services",
+  "patterns": [
+    "Does the college have a placement cell?",
+    "How do I register for placements?",
+    "Are internships mandatory?",
+    "Which companies visit for campus placements?",
+    "How do I prepare for placement interviews?",
+    "Can alumni help in placement opportunities?",
+    "Are placement statistics available online?",
+    "Are there training programs for skill development?",
+    "How can I request guidance for resume or CV writing?",
+    "Whom to contact for career counseling?"
+  ],
+  "responses": [
+    "Yes, the college has a dedicated placement cell.",
+    "Register for placements through the placement portal or office.",
+    "Internships are mandatory for certain courses.",
+    "Various companies visit for campus placements each year.",
+    "Placement training and interview preparation sessions are conducted regularly.",
+    "Alumni can provide guidance and sometimes referrals.",
+    "Placement statistics are published online each year.",
+    "Skill development training programs are available; check announcements.",
+    "Resume and CV guidance is provided by the placement cell.",
+    "For career counseling, contact the placement or student affairs office."
+  ]
+},
+{
+  "tag": "student_support_policies",
+  "patterns": [
+    "How can I report harassment or misconduct?",
+    "Who handles student grievances?",
+    "Are there student clubs or societies?",
+    "Can I start a new club or initiative?",
+    "How do I apply for leave or medical leave?",
+    "Is there counseling or mental health support available?",
+    "What is the code of conduct for students?",
+    "How do I participate in cultural or technical festivals?",
+    "Are there transportation facilities for students?",
+    "How to get a student ID card?"
+  ],
+  "responses": [
+    "Harassment or misconduct should be reported to the student affairs office.",
+    "Student grievances are handled by the grievance redressal committee.",
+    "Yes, there are multiple student clubs and societies.",
+    "You can start a new club by submitting a proposal to the student council.",
+    "Apply for leave or medical leave via the student portal or office.",
+    "Counseling and mental health support are available on campus.",
+    "The student code of conduct is provided during orientation and online.",
+    "Participate in festivals by registering with the organizing committee.",
+    "Transportation facilities are available; check the college transport office.",
+    "Student ID cards are issued by the administration office."
+  ]
+},
+{
+  "tag": "miscellaneous",
+  "patterns": [
+    "How to stay updated with college notifications?",
+    "Are newsletters or magazines published by the college?",
+    "Can parents meet faculty members?",
+    "Is there a student portal or mobile app?",
+    "How to connect with alumni?",
+    "Are workshops, webinars, or seminars organized regularly?",
+    "Can I contribute to college research publications?",
+    "How do I provide feedback about the college?",
+    "Is there any eco-friendly or sustainability initiative on campus?",
+    "How to volunteer for college events?"
+  ],
+  "responses": [
+    "Stay updated with notifications via the college website or student portal.",
+    "Newsletters and magazines are published periodically.",
+    "Parents can meet faculty members by appointment.",
+    "Yes, there is a student portal and sometimes a mobile app.",
+    "Alumni can be contacted via the alumni association.",
+    "Workshops, webinars, and seminars are organized regularly.",
+    "Students can contribute to research publications under faculty guidance.",
+    "Feedback can be submitted online or to the student affairs office.",
+    "The college runs eco-friendly and sustainability initiatives.",
+    "Volunteer for events by registering with the student council or event organizers."
+  ]
+},
+{
+  "tag": "admissions",
+  "patterns": [
+    "What are the eligibility criteria for admission?",
+    "How do I apply for a course?",
+    "Is there an online application form?",
+    "What are the important dates for admission?",
+    "Are there any entrance exams required?",
+    "What documents are needed for admission?",
+    "How do I pay the application fee?",
+    "Can I apply for multiple courses simultaneously?",
+    "How can I check my admission status?",
+    "What is the process for admission cancellation or withdrawal?"
+  ],
+  "responses": [
+    "Eligibility criteria vary by course. Please check the admissions page for details.",
+    "You can apply for a course online through our application portal.",
+    "Yes, we have an online application form available on our website.",
+    "Important dates for admission are published on the admissions page.",
+    "Some courses require entrance exams. Please refer to the course details.",
+    "Required documents include mark sheets, ID proof, and photographs.",
+    "Application fee can be paid online via our payment gateway.",
+    "Yes, you can apply for multiple courses.",
+    "Check your admission status using your application ID on our portal.",
+    "For cancellation or withdrawal, contact the admissions office."
+  ]
+},
+{
+  "tag": "courses_curriculum",
+  "patterns": [
+    "What courses are offered by the college?",
+    "What is the duration of each course?",
+    "Are there any online or part-time courses?",
+    "How can I choose electives or optional subjects?",
+    "Can I change my course after enrollment?",
+    "What is the grading system?",
+    "Are course materials available online?",
+    "How can I access the syllabus for my course?",
+    "Is there any provision for credit transfer from other colleges?",
+    "Are internships or industry projects part of the curriculum?"
+  ],
+  "responses": [
+    "We offer a variety of undergraduate and postgraduate courses. Visit our courses page for details.",
+    "Course durations vary. Most UG courses are 3-4 years, PG courses are 2 years.",
+    "Some online and part-time courses are available. Check the course catalog.",
+    "Electives can be chosen during course registration.",
+    "Course change requests are subject to approval. Contact the academic office.",
+    "We follow a CGPA-based grading system.",
+    "Course materials are available on the student portal.",
+    "Syllabus can be downloaded from the course page.",
+    "Credit transfer is possible for eligible courses. Contact the registrar.",
+    "Yes, internships and industry projects are part of the curriculum."
+  ]
+}
+  ]
+}
