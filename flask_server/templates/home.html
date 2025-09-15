@@ -4,132 +4,473 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>College Enquiry Chatbot</title>
+    <title>Bannari Amman Institute of Technology</title>
     <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}" />
+    <style>
+      body {
+          font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+          background: linear-gradient(135deg, #f5d837 0%, #f76b1c 100%);
+          margin: 0;
+          padding-bottom: 80px;
+          }
+     nav {
+  background: rgba(34,34,34,0.85);
+  color: #fff;
+  padding: 0.5rem 0;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+nav ul li {
+  margin: 0 1.5rem;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+  position: relative;
+}
+nav ul li a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #ffd700;
+  transition: width .3s;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+nav ul li a:hover::after {
+  width: 100%;
+}
+nav ul li a:hover {
+  color: #ffd700;
+}
+      .hero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        min-height: 60vh;
+        background: linear-gradient(120deg, rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url('{{url_for('static',filename='bitcampus.webp')}}') center/cover no-repeat;
+        color: #fff;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        position: relative;
+      }
+      .hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 0.5rem;
+        letter-spacing: 2px;
+        font-weight: 900;
+        background: linear-gradient(90deg,#ffd700,#f76b1c);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .hero p {
+        font-size: 1.4rem;
+        max-width: 600px;
+        margin-bottom: 2rem;
+        background: rgba(0,0,0,0.3);
+        padding: 1rem 2rem;
+        border-radius: 16px;
+        box-shadow: 0 2px 16px rgba(0,0,0,0.09);
+      }
+      .hero .cta-btn {
+        background: linear-gradient(90deg,#ffd700,#f76b1c);
+        color: #222;
+        border: none;
+        padding: 1rem 2.5rem;
+        border-radius: 32px;
+        font-size: 1.2rem;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 2px 16px rgba(0,0,0,0.15);
+        transition: transform 0.2s, box-shadow 0.2s;
+        margin-top: 1rem;
+      }
+      .hero .cta-btn:hover {
+        transform: scale(1.07);
+        box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+      }
+      .quick-info {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin: 2rem 0;
+        flex-wrap: wrap;
+      }
+      .info-card {
+        background: rgba(255,255,255,0.25);
+        border-radius: 24px;
+        box-shadow: 0 2px 24px rgba(0,0,0,0.09);
+        padding: 1.5rem 2.5rem;
+        text-align: center;
+        min-width: 160px;
+        font-size: 1.15rem;
+        transition: box-shadow 0.2s, transform 0.2s;
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255,255,255,0.18);
+      }
+      .info-card span {
+        font-size: 2.2rem;
+        display: block;
+        margin-bottom: 0.3rem;
+      }
+      .info-card:hover {
+        box-shadow: 0 6px 32px rgba(0,0,0,0.18);
+        transform: translateY(-6px) scale(1.04);
+      }
+      .about {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        padding: 2rem 1rem;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      .about img {
+        width: 340px;
+        border-radius: 24px;
+        box-shadow: 0 2px 24px rgba(0,0,0,0.12);
+      }
+      .about div {
+        max-width: 500px;
+      }
+      .about h2 {
+        margin-top: 0;
+        font-size: 2.2rem;
+        color: #222;
+        font-weight: 800;
+      }
+      .about p {
+        font-size: 1.15rem;
+        color: #444;
+        line-height: 1.7;
+      }
+      /* Add this to your <style> section in home.html */
+
+// Consistent container for all sections
+/* Replace your .container CSS with this: */
+.container {
+  width: 200vw;
+  max-width: 200vw;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Section spacing */
+section {
+  margin-bottom: 2.5rem;
+}
+
+/* Featured Programs */
+.featured-programs {
+  background: rgba(255,255,255,0.7);
+  padding: 2rem 0;
+  box-shadow: 0 2px 24px rgba(0,0,0,0.07);
+  border-radius: 18px;
+}
+.program-list {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.program-card {
+  background: rgba(255,255,255,0.45);
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.09);
+  padding: 1.7rem 1.2rem;
+  text-align: center;
+  width: 240px;
+  min-height: 220px;
+  margin-bottom: 1rem;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.18);
+  transition: box-shadow 0.2s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.program-card span {
+  font-size: 2.2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.program-card:hover {
+  box-shadow: 0 6px 32px rgba(0,0,0,0.18);
+  transform: translateY(-6px) scale(1.04);
+}
+
+//* Gallery */
+.gallery.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 0;
+  background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
+  border-radius: 28px;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.gallery-grid img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.09);
+  height: 160px;
+  object-fit: cover;
+  transition: transform 0.2s;
+}
+.gallery-grid img:hover {
+  transform: scale(1.07);
+}
+
+/* Testimonials */
+.testimonials {
+  background: rgba(255,255,255,0.7);
+  padding: 3rem 0;
+  border-radius: 18px;
+}
+.testimonial-list {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.testimonial-card {
+  background: rgba(255,255,255,0.45);
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.09);
+  padding: 1.5rem 1.2rem;
+  text-align: center;
+  width: 240px;
+  min-height: 180px;
+  margin-bottom: 1rem;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.18);
+  transition: box-shadow 0.2s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.testimonial-card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 0.7rem;
+  object-fit: cover;
+}
+.testimonial-card p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+.testimonial-card span {
+  font-size: 0.95rem;
+  color: #888;
+}
+.testimonial-card:hover {
+  box-shadow: 0 6px 32px rgba(0,0,0,0.18);
+  transform: translateY(-6px) scale(1.04);
+}
+
+/* Contact Section */
+.contact-location {
+  background: rgba(255,255,255,0.7);
+  padding: 2rem 0;
+  text-align: center;
+  box-shadow: 0 2px 24px rgba(0,0,0,0.07);
+  border-radius: 18px;
+}
+.contact-location iframe {
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.09);
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 800px;
+  height: 200px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .container { padding: 0 0.5rem; }
+  .program-list, .testimonial-list { flex-direction: column; align-items: center; }
+  .gallery-grid { grid-template-columns: 1fr; }
+}
+      footer {
+        text-align: center;
+        padding: 0.5rem 0;
+        background: #222;
+        color: #fff;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+      }
+      @media (max-width: 900px) {
+        .about { flex-direction: column; text-align: center; }
+        .about img { width: 90%; }
+        .quick-info { flex-direction: column; gap: 1rem; }
+        .program-list, .testimonial-list { flex-direction: column; align-items: center; }
+      }
+    </style>
   </head>
   <body>
-    
-    <!-- <main>
-      <h1>College Enquiry Chatbot System</h1>
-    <p>This chatbot will respond to students' queries regarding university. Questions like "When are holidays ? ", "Can you tell more about teachers?","How long does MCA take ?","What is my CGPA this sem" can be answered by this chatbot. The original topic of this project is "Efficient Chatbot Design". Read the detailed exolanation on how we created this efficient chatbot design <a href="https://github.com/abhik-b/college-enquiry-chatbot/blob/master/Explanation.md" target="_blank">here.</a></p>
-
-    <h3>  All features :</h3>
+    <nav>
       <ul>
-        <li>Ask result or CGPA</li>
-        <li>Queries related to faculty</li>
-        <li>Course details & syllabus</li>
-        <li>Ask about holidays</li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Admissions</a></li>
+        <li><a href="#">Facilities</a></li>
+        <li><a href="#">Contact</a></li>
       </ul>
-    
-      <h3>How to Interact :</h3>
-    <ul>
-      <li>Please Click on the chat button on the bottom-right corner. </li>
-      <li>Then interact with the chatbot : 
-          <ol>
-            <li>Try greeting the bot </li>
-            <li>ask for your result </li>
-            <li>ask for any particular course</li>
-            <li>Enquire about faculties or holidays</li>
-            <li>Ask for jokes !!!</li>
-          </ol>
-      </li>
-    </ul>
-  </main> -->
-      <div class="chatbot-section">
-        <figure class="mobile hidden">
-          <div class="app">
-            <!-- Header -->
-            <div class="header">
-              <!-- avatar -->
-              <img
-                class="avatar"
-                src="{{url_for('static',filename='bitcampus.webp')}}"
-                alt="Chatbot"
-              />
-              <div>
-
-                <p>Bit Enquiry ChatBot</p>
-                <span>Online</span>
-              </div>
-              <!-- name & status -->
-            </div>
-
-            <!-- Chat section -->
-            <div class="chat-messages">
-              <div class="chat-message incoming-message">
-              👋  Hello, I am Bit College Enquiry Bot 
-              </div>
-              <div class="chat-message incoming-message">
-              Ask me anything related to :
-                <ol>
-                  <li>Semester wise result 📜📚</li>
-                  <li>Faculty 🧑‍🏫👩‍🏫</li>
-                  <li>Courses & Syllabus 📖</li>
-                  <li>Timetable ⏰</li>
-                  <li>College Events 🎉</li>
-                  <li>Holidays 🥳</li>
-                                    
-                  <li>Library 📚</li>
-                  <li>Campus Facilities 🏫</li>
-                  <li>Fees 💰</li>
-                  <li>Placements 💼</li>
-                  <li>Hostel 🏢</li>
-                  <li>Transport 🚌</li>
-                
-                  <li>Scholarships 🎓</li>
-                  <li>Admission Process 📝</li>
-                  <li>Alumni Network 🎓</li>
-                  <li>Student Support Services 🤝</li>
-                  <li>Joke 😃</li>
-                  <li>etc...</li>
-                </ol>
-              </div>
-            </div>
-
-            <!-- chat input section -->
-            <div class="chat-input-section">
-              <form id="chat-form">
-                <input
-                  id="chat-input"
-                  type="text"
-                  aria-label="chat-input"
-                  placeholder="Type a message ..."
-                />
-                <button
-                  class="svg-btn"
-                  type="submit"
-                  aria-label="send-message-btn"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="chat-input-svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="white"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </button>
-              </form>
-            </div>
-          </div>
-        </figure>
-        <div class="button-container">
-          <button onclick="toggleChatBot()" class="chat-open-btn">
-            <img
-              src="https://cdn.onlinewebfonts.com/svg/img_397748.png"
-              alt="chat bot"
-            />
-          </button>
+    </nav>
+    <section class="hero">
+      <h1>Bannari Amman Institute of Technology</h1>
+      <p>
+        Welcome to BIT! A premier institution fostering innovation, excellence, and holistic development. Explore our campus, programs, and vibrant student life.
+      </p>
+      <button class="cta-btn">Explore Programs</button>
+    </section>
+    <section class="quick-info">
+      <div class="info-card"><span>🎓</span><h4>50+ Courses</h4></div>
+      <div class="info-card"><span>💼</span><h4>98% Placement</h4></div>
+      <div class="info-card"><span>🏞️</span><h4>200 Acres Campus</h4></div>
+      <div class="info-card"><span>🎯</span><h4>30+ Clubs</h4></div>
+    </section>
+    <section class="about">
+      <img src="{{url_for('static',filename='bitcampus.webp')}}" alt="BIT Campus" />
+      <div>
+        <h2>About BIT</h2>
+        <p>Bannari Amman Institute of Technology is renowned for its academic excellence, innovative research, and vibrant campus life. Our mission is to empower students to become leaders in technology and society.</p>
+      </div>
+    </section>
+    <section class="featured-programs container">
+      <h2>Featured Programs</h2>
+      <div class="program-list">
+        <div class="program-card"><span>🖥️</span><h4>B.Tech Computer Science</h4><p>Cutting-edge curriculum in AI, ML, and Data Science.</p></div>
+        <div class="program-card"><span>⚙️</span><h4>B.Tech Mechanical</h4><p>Industry-focused labs and internships.</p></div>
+        <div class="program-card"><span>📈</span><h4>MBA</h4><p>Business analytics and leadership training.</p></div>
+      </div>
+    </section>
+    <section class="gallery container">
+      <h2>Campus Life</h2>
+      <div class="gallery-grid">
+        <img src="{{url_for('static',filename='lab.jpeg')}}" alt="Lab" />
+        <img src="{{url_for('static',filename='event.jpeg')}}" alt="Event" />
+        <img src="{{url_for('static',filename='library.jpeg')}}" alt="Library" />
+        <img src="{{url_for('static',filename='sports.jpeg')}}" alt="Sports" />
+      </div>
+    </section>
+    <section class="testimonials container">
+      <h2>What Our Students Say</h2>
+      <div class="testimonial-list">
+        <div class="testimonial-card">
+          <img src="{{url_for('static',filename='student1.jpeg')}}" alt="Student 1" />
+          <p>"BIT gave me the skills and confidence to succeed in my career."</p>
+          <span>- Priya, MCA</span>
+        </div>
+        <div class="testimonial-card">
+          <img src="{{url_for('static',filename='student2.jpeg')}}" alt="Student 2" />
+          <p>"The campus life and faculty support are amazing!"</p>
+          <span>- Arun, B.Tech</span>
         </div>
       </div>
-    
-    <footer>@Bannari Amman Institute Of Technology ChatBot</footer>
+    </section>
+    <section class="contact-location container">
+      <h2>Contact Us</h2>
+      <p>Email: info@bitsathy.ac.in | Phone: +91-4295-226000</p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3912.363813164456!2d77.27402131480197!3d11.493242591819073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba96f6b6e7e6b7d%3A0x6e7e6b7d6e7e6b7d!2sBannari%20Amman%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1633072800000!5m2!1sen!2sin" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+    <!-- Chatbot section remains unchanged -->
+    <div class="chatbot-section">
+      <figure class="mobile hidden">
+        <div class="app">
+          <div class="header">
+            <img class="avatar" src="{{url_for('static',filename='bitcampus.webp')}}" alt="Chatbot" />
+            <div>
+              <p>Bit Enquiry ChatBot</p>
+              <span>Online</span>
+            </div>
+          </div>
+          <div class="chat-messages">
+            <div class="chat-message incoming-message">
+              👋  Hello, I am Bit College Enquiry Bot 
+            </div>
+            <div class="chat-message incoming-message">
+              Ask me anything related to :
+              <ol>
+                <li>Semester wise result 📜📚</li>
+                <li>Faculty 🧑‍🏫👩‍🏫</li>
+                <li>Courses & Syllabus 📖</li>
+                <li>Timetable ⏰</li>
+                <li>College Events 🎉</li>
+                <li>Holidays 🥳</li>
+                <li>Library 📚</li>
+                <li>Campus Facilities 🏫</li>
+                <li>Fees 💰</li>
+                <li>Placements 💼</li>
+                <li>Hostel 🏢</li>
+                <li>Transport 🚌</li>
+                <li>Scholarships 🎓</li>
+                <li>Admission Process 📝</li>
+                <li>Alumni Network 🎓</li>
+                <li>Student Support Services 🤝</li>
+                <li>Joke 😃</li>
+                <li>etc...</li>
+              </ol>
+            </div>
+          </div>
+          <div class="chat-input-section">
+            <form id="chat-form">
+              <input id="chat-input" type="text" aria-label="chat-input" placeholder="Type a message ..." />
+              <button class="svg-btn" type="submit" aria-label="send-message-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" class="chat-input-svg" fill="none" viewBox="0 0 24 24" stroke="white">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </figure>
+      <div class="button-container">
+        <button onclick="toggleChatBot()" class="chat-open-btn">
+          <img src="https://cdn.onlinewebfonts.com/svg/img_397748.png" alt="chat bot" />
+        </button>
+      </div>
+    </div>
+    <footer>
+      <div>
+        @Bannari Amman Institute Of Technology ChatBot
+      </div>
+    </footer>
     <script src="{{url_for('static',filename='chat.js')}}"></script>
   </body>
 </html>
