@@ -171,7 +171,8 @@ def coursesupdate(id):
 #     return send_file(BytesIO(course.syllabus), download_name=f"{course.name}.pdf")
 @app.route("/courses/syllabus/<int:id>/")
 def syllabus_api(id):
-    course = Course.query.get(id)
+    # course = Course.query.get(id)
+    course = Course.query.filter_by(id=id).first()
     if course and course.syllabus:
         return send_file(BytesIO(course.syllabus), download_name=f"{course.name}_syllabus.txt")
     else:

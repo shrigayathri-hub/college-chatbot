@@ -42,10 +42,14 @@ def chatbot_response(sentence):
 
     probs = torch.softmax(output, dim=1)
     prob = probs[0][predicted.item()]
-
+    # ... intent prediction code ...
     if prob.item() > 0.75:
         for intent in intents['intents']:
             if tag == intent['tag']:
+                # Try to match pattern by keyword
+                for i, pattern in enumerate(intent['patterns']):
+                    if pattern in sentence.lower():
+                        return (intent['responses'][i], tag)
+                # Fallback to random if no pattern matches
                 return (random.choice(intent['responses']), tag)
-        return ("I am unable to understand that..", 'greetings')
 print('hi')

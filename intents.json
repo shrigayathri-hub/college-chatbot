@@ -1,6 +1,6 @@
 {
   "intents": [
-    {
+      {
       "tag": "greeting",
       "patterns": [
         "Hi",
@@ -38,324 +38,369 @@
       "responses": ["Happy to help!", "Any time!", "My pleasure"]
     },
     {
-      "tag": "holidays",
+      "tag": "result",
       "patterns": [
-        "When are holidays ? ",
-        "What kinds of holidays are there?",
-        "What holidays do we have?",
-        "tell more about holidays",
-        "holidays when ???",
-        "which days are holidays ?",
-        "How many days can we get after seach sem ?" ,
-        "Can we get study leave ?",
-        "what are the biggest holidays we can get ??",
-        "Are there any department wise special holiday ?"
+        "result",
+        "my result",
+        "show result",
+        "semester result",
+        "exam result",
+        "marks",
+        "cgpa",
+        "sgpa",
+        "score",
+        "grade"
       ],
-      "responses": [""]
+      "responses": [
+        "Please enter your student ID to get your result.",
+        "Your result will be displayed after you provide your student ID.",
+        "I can fetch your marks if you give me your student ID.",
+        "To check your CGPA, please type your student ID."
+      ]
     },
     {
       "tag": "faculty",
       "patterns": [
-        "Do you know the teachers ?",
-        "Who are the teachers ?",
-        "Can you tell more about teachers?",
-        "Tell me about teachers  ",
-        "more info on teachers",
-        "what are the teachers ?",
-        "tell more about the teachers",
-        "narula teachers",
-        "who is the the principal and what about the placement officer??" 
+        "faculty",
+        "teachers",
+        "professor",
+        "principal",
+        "placement officer",
+        "faculty list",
+        "faculty info",
+        "teacher details",
+        "faculty contact"
       ],
       "responses": [
-        "Our Prinicipal is Dr. Maitreyi Ray Kanjilal \n Our Placement Cell has Biswarup Bhattacharjee , Abhijit Nandy , Debanjan Mitra. "
+        "Faculty contacts are available for each department. \n Placement Cell: Mr Ranjith , Mr. Ravi\n",
+        "Computer Science and Business Systems -- Dr. Sasikala D – Professor and Head \n Computer Science and Engineering -- Dr. Premlatha K – Professor and Head \n Computer Technology -- Dr. Ramesh C – Associate Professor and Head \n Electrical and Electronics Engineering -- Dr. Sivaram P – Professor and Head \n Electronics and Communication Engineering -- Dr. Poongodi C – Professor and Head "
       ]
     },
     {
-      "tag": "courses",
-      "patterns": [
-        "Which Courses are offered here",
-        "tell me more about BCA",
-        "More info on BTECH please",
-        "What is MTECH ?",
-        "What is BCA ?",
-        "When do BTECH gets completed ?",
-        "How long does MCA take ?",
-        "which Course are best here ?" ,
-        "what about the fees Stucture ?" ,
-        "Are there any medical course ?" ,
-        "how many time will take to complete those course ?"
-      ],
-      "responses": ["Course related queries", "MCA takes 2years"]
-    },
+  "tag": "courses",
+  "patterns": [
+    "courses",                
+    "course list",            
+    "course provided",        
+    "course duration",       
+    "available courses",      
+    "course info",            
+    "course details",         
+    "course options",         
+    "course names"            
+  ],
+  "responses": [
+    "We offer BCA, BTECH, MCA, and MTECH.",                                
+    "Here is the list of courses: BCA, BTECH, MCA, MTECH, Medical.",       
+    "The college provides BCA, BTECH, MCA, MTECH, and Medical courses.",   
+    "BCA is 3 years, MCA is 2 years, BTECH is 4 years, MTECH is 2 years.", 
+    "Available courses are BCA, BTECH, MCA, MTECH, and Medical.",           
+    "Course info: BCA - UG, MCA - PG, BTECH - UG, MTECH - PG.",            
+    "Course details: BCA covers programming, MCA covers advanced computing.",
+    "Course options include regular, part-time, and online.",               
+    "Course names: BCA, BTECH, MCA, MTECH, Medical."                        
+  ]
+},
     {
-      "tag": "funny",
+      "tag": "syllabus",
       "patterns": [
-        "Tell me a joke!",
-        "Tell me something funny!",
-        "Do you know a joke?"
+        "course syllabus",
+        "download syllabus",
+        "syllabus for MCA",
+        "syllabus for BCA",
+        "syllabus for operating system"
       ],
       "responses": [
-        "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
-        "What did the buffalo say when his son left for college? heeee said Bison."
+        "Please mention the course name to get the syllabus.",
+        "You can download the syllabus for your course here.",
+        "Syllabus for MCA includes Data Structures, DBMS, and more.",
+        "Syllabus for BCA covers Programming, Networking, and Web Development."
       ]
     },
     {
-      "tag": "result",
+      "tag": "timetable",
       "patterns": [
-        "WHAT is my SGPA this sem ?",
-        "What is my CGPA this sem",
-        "Do you know my result?",
-        "Do you know my CGPA?",
-        "Do you know my curent cgpa?",
-        "tell me my cgpa?",
-        "tell me my curent sgpa?",
-        "tell me my result",
-        "what is my result"
+        "timetable",
+        "class schedule",
+        "today's timetable",
+        "weekly timetable",
+        "lecture timing",
+        "next class"
       ],
-      "responses": ["tell me your student id , example : \n434121010021"]
+      "responses": [
+        "Hour       II& III Year\tI Year & IV Year\nI\t08:45 AM - 09:35 AM\t08:45 AM - 09:35 AM\nII\t09:35 AM - 10:25 AM\t09:35 AM - 10:25 AM\nBreak\t10:25 AM - 10:40 AM\t10:25 AM - 10:40 AM\nIII\t10:40 AM - 11:30 AM\t10:40 AM - 11:30 AM\nIV\t11:30 AM - 12:20 PM\t11:30 AM - 12:35 PM\nLunch\t12:20 PM - 01:30 PM\t12:35 PM - 01:30 PM\nV\t01:30 PM - 02:20 PM\t01:30 PM - 02:20 PM\nVI\t02:20 PM - 03:10 PM\t02:20 PM - 03:10 PM\nBreak\t03:10 PM - 03:25 PM\t03:10 PM - 03:25 PM\nVII\t03:25 PM - 04:25 PM\t03:25 PM - 04:25 PM\n",
+        "Hour       II& III Year\tI Year & IV Year\nI\t08:45 AM - 09:35 AM\t08:45 AM - 09:35 AM\nII\t09:35 AM - 10:25 AM\t09:35 AM - 10:25 AM\nBreak\t10:25 AM - 10:40 AM\t10:25 AM - 10:40 AM\nIII\t10:40 AM - 11:30 AM\t10:40 AM - 11:30 AM\nIV\t11:30 AM - 12:20 PM\t11:30 AM - 12:35 PM\nLunch\t12:20 PM - 01:30 PM\t12:35 PM - 01:30 PM\nV\t01:30 PM - 02:20 PM\t01:30 PM - 02:20 PM\nVI\t02:20 PM - 03:10 PM\t02:20 PM - 03:10 PM\nBreak\t03:10 PM - 03:25 PM\t03:10 PM - 03:25 PM\nVII\t03:25 PM - 04:25 PM\t03:25 PM - 04:25 PM\n",
+        "Hour       II& III Year\tI Year & IV Year\nI\t08:45 AM - 09:35 AM\t08:45 AM - 09:35 AM\nII\t09:35 AM - 10:25 AM\t09:35 AM - 10:25 AM\nBreak\t10:25 AM - 10:40 AM\t10:25 AM - 10:40 AM\nIII\t10:40 AM - 11:30 AM\t10:40 AM - 11:30 AM\nIV\t11:30 AM - 12:20 PM\t11:30 AM - 12:35 PM\nLunch\t12:20 PM - 01:30 PM\t12:35 PM - 01:30 PM\nV\t01:30 PM - 02:20 PM\t01:30 PM - 02:20 PM\nVI\t02:20 PM - 03:10 PM\t02:20 PM - 03:10 PM\nBreak\t03:10 PM - 03:25 PM\t03:10 PM - 03:25 PM\nVII\t03:25 PM - 04:25 PM\t03:25 PM - 04:25 PM\n",
+        "Hour       II& III Year\tI Year & IV Year\nI\t08:45 AM - 09:35 AM\t08:45 AM - 09:35 AM\nII\t09:35 AM - 10:25 AM\t09:35 AM - 10:25 AM\nBreak\t10:25 AM - 10:40 AM\t10:25 AM - 10:40 AM\nIII\t10:40 AM - 11:30 AM\t10:40 AM - 11:30 AM\nIV\t11:30 AM - 12:20 PM\t11:30 AM - 12:35 PM\nLunch\t12:20 PM - 01:30 PM\t12:35 PM - 01:30 PM\nV\t01:30 PM - 02:20 PM\t01:30 PM - 02:20 PM\nVI\t02:20 PM - 03:10 PM\t02:20 PM - 03:10 PM\nBreak\t03:10 PM - 03:25 PM\t03:10 PM - 03:25 PM\nVII\t03:25 PM - 04:25 PM\t03:25 PM - 04:25 PM\n",
+        "Hour       II& III Year\tI Year & IV Year\nI\t08:45 AM - 09:35 AM\t08:45 AM - 09:35 AM\nII\t09:35 AM - 10:25 AM\t09:35 AM - 10:25 AM\nBreak\t10:25 AM - 10:40 AM\t10:25 AM - 10:40 AM\nIII\t10:40 AM - 11:30 AM\t10:40 AM - 11:30 AM\nIV\t11:30 AM - 12:20 PM\t11:30 AM - 12:35 PM\nLunch\t12:20 PM - 01:30 PM\t12:35 PM - 01:30 PM\nV\t01:30 PM - 02:20 PM\t01:30 PM - 02:20 PM\nVI\t02:20 PM - 03:10 PM\t02:20 PM - 03:10 PM\nBreak\t03:10 PM - 03:25 PM\t03:10 PM - 03:25 PM\nVII\t03:25 PM - 04:25 PM\t03:25 PM - 04:25 PM\n",
+        "Hour       II& III Year\tI Year & IV Year\nI\t08:45 AM - 09:35 AM\t08:45 AM - 09:35 AM\nII\t09:35 AM - 10:25 AM\t09:35 AM - 10:25 AM\nBreak\t10:25 AM - 10:40 AM\t10:25 AM - 10:40 AM\nIII\t10:40 AM - 11:30 AM\t10:40 AM - 11:30 AM\nIV\t11:30 AM - 12:20 PM\t11:30 AM - 12:35 PM\nLunch\t12:20 PM - 01:30 PM\t12:35 PM - 01:30 PM\nV\t01:30 PM - 02:20 PM\t01:30 PM - 02:20 PM\nVI\t02:20 PM - 03:10 PM\t02:20 PM - 03:10 PM\nBreak\t03:10 PM - 03:25 PM\t03:10 PM - 03:25 PM\nVII\t03:25 PM - 04:25 PM\t03:25 PM - 04:25 PM\n"
+      ]
+      },
+    {
+      "tag": "events",
+      "patterns": [
+        "events",
+        "college event",
+        "fest",
+        "seminar",
+        "upcoming events",
+        "event date",
+        "event details"
+      ],
+      "responses": [
+        "To know about upcoming events, please visit the Bip portal Activity Master Section",
+        "To know about upcoming events, please visit the Bip portal Activity Master Section",
+        "Annual fest is on 15th October.",
+        "Next seminar: AI in Education, on 22nd September.",
+        "Cultural events are held every semester.",
+        "if you want details for a specific event check official website.",
+        "if you want details for a specific event check official website."
+
+      ]
     },
-   {
-  "tag": "fees_scholarships",
-  "patterns": [
-    "What is the fee structure for my course?",
-    "Are there any additional charges (lab, library, hostel)?",
-    "How can I pay the fees online?",
-    "Is there an installment payment option?",
-    "Are scholarships or financial aid available?",
-    "What is the eligibility for scholarships?",
-    "How do I apply for a scholarship?",
-    "Are there any fee waivers for meritorious students?",
-    "Can fees be refunded if I withdraw mid-semester?",
-    "Who should I contact for fee-related queries?"
-  ],
-  "responses": [
-    "Fee structure varies by course. Please check the fees page for details.",
-    "Additional charges like lab, library, and hostel fees apply depending on your course.",
-    "Fees can be paid online via our payment portal.",
-    "Yes, installment payment options are available for certain courses.",
-    "Scholarships and financial aid are available for eligible students.",
-    "Eligibility for scholarships depends on merit and financial criteria.",
-    "You can apply for scholarships through the student portal or the financial aid office.",
-    "Meritorious students may be eligible for fee waivers. Contact the admin office.",
-    "Fee refunds follow the college policy. Contact the accounts office for details.",
-    "For fee-related queries, please contact the accounts or admissions office."
-  ]
-},
-{
-  "tag": "exams_results",
-  "patterns": [
-    "When are the semester exams scheduled?",
-    "How do I check my exam timetable?",
-    "How can I apply for exam re-evaluation?",
-    "What is the passing criteria?",
-    "When will results be published?",
-    "Can I download my mark sheet online?",
-    "How do I get my grade transcript?",
-    "What to do if I lose my result card?",
-    "Are there supplementary or re-exam options?",
-    "Whom should I contact for exam-related issues?"
-  ],
-  "responses": [
-    "Exam schedules are published on the exams page each semester.",
-    "You can check your timetable on the student portal.",
-    "Re-evaluation can be applied for via the examination office.",
-    "Passing criteria follow the course grading guidelines.",
-    "Results are published online on the student portal.",
-    "Mark sheets can be downloaded online after result declaration.",
-    "Grade transcripts are available from the registrar or online portal.",
-    "If you lose your result card, request a duplicate from the exams office.",
-    "Supplementary exams are offered for failed subjects. Check the exam notice.",
-    "For exam-related issues, contact the examination office."
-  ]
-},
-{
-  "tag": "faculty_departments",
-  "patterns": [
-    "Who are the faculty members of my department?",
-    "How can I contact a specific teacher?",
-    "What are the office hours of faculty members?",
-    "Which department handles student counseling?",
-    "Are faculty profiles available online?",
-    "Can I request guidance for project work from faculty?",
-    "Are there guest lectures or workshops conducted regularly?",
-    "How do I report issues with faculty interaction?",
-    "Which faculty handles internships or placements?",
-    "How can I know about department activities?"
-  ],
-  "responses": [
-    "Faculty members for each department are listed on the website.",
-    "You can contact teachers via email or during office hours.",
-    "Office hours are specified on the department page.",
-    "Student counseling is handled by the student affairs department.",
-    "Faculty profiles and research details are available online.",
-    "Project guidance can be requested from the concerned faculty member.",
-    "Guest lectures and workshops are scheduled regularly; check announcements.",
-    "Report any issues with faculty to the department head or student affairs.",
-    "Internships and placements are coordinated by the training and placement cell.",
-    "Department activities are listed on the respective department's notice board or website."
-  ]
-},
-{
-  "tag": "campus_facilities",
-  "patterns": [
-    "What are the library timings?",
-    "How do I issue books from the library?",
-    "Are there computer labs or Wi-Fi facilities available?",
-    "Are hostel accommodations available?",
-    "What are the hostel rules and fees?",
-    "Are there sports and recreational facilities?",
-    "Is there a cafeteria on campus?",
-    "Are there medical facilities on campus?",
-    "How can I book classrooms or seminar halls?",
-    "Are parking facilities available for students?"
-  ],
-  "responses": [
-    "Library timings are available on the library page.",
-    "Books can be issued using your student ID at the library counter.",
-    "Computer labs and Wi-Fi are available in designated areas.",
-    "Hostel accommodations are provided on campus for eligible students.",
-    "Hostel rules and fees are detailed in the hostel handbook.",
-    "Sports and recreational facilities are available; check the sports office.",
-    "Yes, there is a cafeteria offering meals and snacks.",
-    "Medical facilities are available on campus for students.",
-    "Classrooms and seminar halls can be booked via the administration office.",
-    "Parking facilities are available for students with proper permits."
-  ]
-},
-{
-  "tag": "placements_career_services",
-  "patterns": [
-    "Does the college have a placement cell?",
-    "How do I register for placements?",
-    "Are internships mandatory?",
-    "Which companies visit for campus placements?",
-    "How do I prepare for placement interviews?",
-    "Can alumni help in placement opportunities?",
-    "Are placement statistics available online?",
-    "Are there training programs for skill development?",
-    "How can I request guidance for resume or CV writing?",
-    "Whom to contact for career counseling?"
-  ],
-  "responses": [
-    "Yes, the college has a dedicated placement cell.",
-    "Register for placements through the placement portal or office.",
-    "Internships are mandatory for certain courses.",
-    "Various companies visit for campus placements each year.",
-    "Placement training and interview preparation sessions are conducted regularly.",
-    "Alumni can provide guidance and sometimes referrals.",
-    "Placement statistics are published online each year.",
-    "Skill development training programs are available; check announcements.",
-    "Resume and CV guidance is provided by the placement cell.",
-    "For career counseling, contact the placement or student affairs office."
-  ]
-},
-{
-  "tag": "student_support_policies",
-  "patterns": [
-    "How can I report harassment or misconduct?",
-    "Who handles student grievances?",
-    "Are there student clubs or societies?",
-    "Can I start a new club or initiative?",
-    "How do I apply for leave or medical leave?",
-    "Is there counseling or mental health support available?",
-    "What is the code of conduct for students?",
-    "How do I participate in cultural or technical festivals?",
-    "Are there transportation facilities for students?",
-    "How to get a student ID card?"
-  ],
-  "responses": [
-    "Harassment or misconduct should be reported to the student affairs office.",
-    "Student grievances are handled by the grievance redressal committee.",
-    "Yes, there are multiple student clubs and societies.",
-    "You can start a new club by submitting a proposal to the student council.",
-    "Apply for leave or medical leave via the student portal or office.",
-    "Counseling and mental health support are available on campus.",
-    "The student code of conduct is provided during orientation and online.",
-    "Participate in festivals by registering with the organizing committee.",
-    "Transportation facilities are available; check the college transport office.",
-    "Student ID cards are issued by the administration office."
-  ]
-},
-{
-  "tag": "miscellaneous",
-  "patterns": [
-    "How to stay updated with college notifications?",
-    "Are newsletters or magazines published by the college?",
-    "Can parents meet faculty members?",
-    "Is there a student portal or mobile app?",
-    "How to connect with alumni?",
-    "Are workshops, webinars, or seminars organized regularly?",
-    "Can I contribute to college research publications?",
-    "How do I provide feedback about the college?",
-    "Is there any eco-friendly or sustainability initiative on campus?",
-    "How to volunteer for college events?"
-  ],
-  "responses": [
-    "Stay updated with notifications via the college website or student portal.",
-    "Newsletters and magazines are published periodically.",
-    "Parents can meet faculty members by appointment.",
-    "Yes, there is a student portal and sometimes a mobile app.",
-    "Alumni can be contacted via the alumni association.",
-    "Workshops, webinars, and seminars are organized regularly.",
-    "Students can contribute to research publications under faculty guidance.",
-    "Feedback can be submitted online or to the student affairs office.",
-    "The college runs eco-friendly and sustainability initiatives.",
-    "Volunteer for events by registering with the student council or event organizers."
-  ]
-},
-{
-  "tag": "admissions",
-  "patterns": [
-    "What are the eligibility criteria for admission?",
-    "How do I apply for a course?",
-    "Is there an online application form?",
-    "What are the important dates for admission?",
-    "Are there any entrance exams required?",
-    "What documents are needed for admission?",
-    "How do I pay the application fee?",
-    "Can I apply for multiple courses simultaneously?",
-    "How can I check my admission status?",
-    "What is the process for admission cancellation or withdrawal?"
-  ],
-  "responses": [
-    "Eligibility criteria vary by course. Please check the admissions page for details.",
-    "You can apply for a course online through our application portal.",
-    "Yes, we have an online application form available on our website.",
-    "Important dates for admission are published on the admissions page.",
-    "Some courses require entrance exams. Please refer to the course details.",
-    "Required documents include mark sheets, ID proof, and photographs.",
-    "Application fee can be paid online via our payment gateway.",
-    "Yes, you can apply for multiple courses.",
-    "Check your admission status using your application ID on our portal.",
-    "For cancellation or withdrawal, contact the admissions office."
-  ]
-},
-{
-  "tag": "courses_curriculum",
-  "patterns": [
-    "What courses are offered by the college?",
-    "What is the duration of each course?",
-    "Are there any online or part-time courses?",
-    "How can I choose electives or optional subjects?",
-    "Can I change my course after enrollment?",
-    "What is the grading system?",
-    "Are course materials available online?",
-    "How can I access the syllabus for my course?",
-    "Is there any provision for credit transfer from other colleges?",
-    "Are internships or industry projects part of the curriculum?"
-  ],
-  "responses": [
-    "We offer a variety of undergraduate and postgraduate courses. Visit our courses page for details.",
-    "Course durations vary. Most UG courses are 3-4 years, PG courses are 2 years.",
-    "Some online and part-time courses are available. Check the course catalog.",
-    "Electives can be chosen during course registration.",
-    "Course change requests are subject to approval. Contact the academic office.",
-    "We follow a CGPA-based grading system.",
-    "Course materials are available on the student portal.",
-    "Syllabus can be downloaded from the course page.",
-    "Credit transfer is possible for eligible courses. Contact the registrar.",
-    "Yes, internships and industry projects are part of the curriculum."
-  ]
-}
+    {
+      "tag": "holidays",
+      "patterns": [
+        "holidays",
+        "holiday list",
+        "vacation",
+        "holiday date",
+        "holiday details",
+        "study leave",
+        "semester break"
+      ],
+      "responses": [
+        "Winter holidays: 24th Dec to 2nd Jan.",
+        "Semester break starts after exams.",
+        "You can download the holiday list as a PDF.",
+        "Study leave is given before final exams."
+      ]
+    },
+    {
+      "tag": "library",
+      "patterns": [
+        "library timing",
+        "library",
+        "issue book",
+        "libraries rules",
+        "facilities in library",
+        "library contact"
+      ],
+      "responses": [
+        "Library is open from 8am to 8pm.",
+        "well Spacious library with over 10,000 books and journals. with free wifi and e-books access",
+        "Books can be issued using your student ID at the library counter.",
+        "You can issue up to 3 books at a time and late submission fines apply.",
+        "Library has Free Wi-Fi , Self Study Area and computer access along with E-book access.",
+        "Contact the librarian in Learning Center for more info."
+      ]
+    },
+    {
+      "tag": "facilities",
+      "patterns": [
+        "facilities",
+        "campus facility",
+        "wifi",
+        "medical facility",
+        "parking facility",
+        "computer lab",
+        "sports"
+      ],
+      "responses": [
+        "campus facilities include Wi-Fi, Special labs, Library, sports complex, cafeteria, and medical center.",
+        "Campus has Wi-Fi, sports complex, cafeteria, and medical center.",
+        "Library has Free Wi-Fi , Self Study Area and computer access along with E-book access.",
+        "Medical center is available 24/7 for emergencies.",
+        "Parking is available for students with proper licence for both bikes and cars.",
+        "special labs are open from 9am to 6pm for student to engage them with project.",
+        "Sports facilities include football, basketball, and gym."
+      ]
+    },
+    {
+      "tag": "fees",
+      "patterns": [
+        "fees",
+        "give fee detail",
+        "what is fee structure",
+        "pay fees",
+        "whether fee refund in bit?",
+        "is fee waiver available?",
+        "installment fee"
+      ],
+      "responses": [
+        "Fees may vary by course and year., Please visit the official website for detailed fee structure.",
+        "Fee details are available on the college website.",
+        "Fees may vary by course and year., Please visit the official website for detailed fee structure.",
+        "Fees can be paid online through camps website or at the Research center.",
+        "Fee refund is available as per college policy.",
+        "Fee waiver is available for meritorious and needy students.",
+        "Installment payment option is available."
+      ]
+    },
+    {
+      "tag": "placements",
+      "patterns": [
+        "placements in bit?",
+        "campus placement",
+        "internship",
+        "placement stats",
+        "what are the companies visiting for placements"
+      ],
+      "responses": [
+        "We have best Placement with Top recruiters Like TCS, Infosys, Wipro , Accenture etc...",
+        "Placement cell organizes training and interviews. Contact placement officers in T&p cell for more info.",
+        "Internships are mandatory for final year students.",
+        "Placement statistics are updated every month through mail.",
+        "top companies visiting for placements include TCS, Infosys, Wipro, Accenture, and more."
+      ]
+    },
+    {
+      "tag": "hostel",
+      "patterns": [
+        "hostel facility",
+        "hostels fee",
+        "facility in hostel",
+        "warden in hostel",
+        "timing detail in hostel",
+        "rules in hostel",
+        "rooms in hostel"
+      ],
+      "responses": [
+        "we have best hostel facitity with minimal infrastructure and good food.",
+        "Hostel fee: ₹1,25,000/year approximately along with mess charges.",
+        "Hostel has 24/7 security and Wi-Fi.",
+        "Contact Hostel Incharge: Mr. Ravi for more details.",
+        "Hostel timings: Entry allowed till 10pm, lights out by 11pm.",
+        "Hostel rules include no visitors after 8pm and maintaining cleanliness.",
+        "hostel rooms are furnished with basic amenities and shared bathrooms. and can be shared by 4 students without ac and 2 students with ac."
+      ]
+    },
+    {
+      "tag": "transport",
+      "patterns": [
+        "transports in bit",
+        "bus availability",
+        "college bus",
+        "bus timing",
+        "transport facility",
+        "bus route"
+      ],
+      "responses": [
+        "college bus facility is available from major city points.",
+        "bus timing: Morning and evening shifts available.",
+        "Bus routes cover all major city areas.",
+        "College buses run from 7am to 7pm. Bus timings are displayed at the main gate.",
+        "transport facility includes buses with automatic closure and biometric attendance.",
+        "Contact Transport Incharge: Mr. Ravi for more details or Transport office can help with queries.."
+      ]
+    },
+    {
+      "tag": "scholarships",
+      "patterns": [
+        "scholarship in bit?",
+        "apply scholarship",
+        "scholarship deadline",
+        "scholarship amount",
+        "scholarship eligibility"
+      ],
+      "responses": [
+        "Yes,Scholarships are available for meritorious students.",
+        "Apply for scholarships through the scholarship officer guidance",
+        "Apply for scholarships before 30th September.",
+        "Scholarship amount varies by category. Please contact the scholarship office in Research Center",
+        "Eligibility: 75% marks in Board exams and Student with financial need"
+      ]
+    },
+    {
+      "tag": "admission",
+      "patterns": [
+        "admissions in bit?",
+        "admission date",
+        "how to apply admission",
+        "process of admission",
+        "admission form",
+        "eligiblity criteria for admission"
+      ],
+      "responses": [
+        "Admissions start from 1st June, Contact the admission office for more info.",
+        "Admission start from 1st June and ends on 31st August.",
+        "You can apply for admission online through the college website.",
+        "Admission process includes apply councelling for merit students or direct admission based on management quota.",
+        "Admission forms are available online.",
+        "Eligibility: 50% marks in qualifying exam."
+      ]
+    },
+    {
+      "tag": "alumni",
+      "patterns": [
+        "alumni network",
+        "alumni info",
+        "contact alumni",
+        "alumni event",
+        "alumni meet"
+      ],
+      "responses": [
+        "Alumni meet is held every December . You can Contact alumni via the alumni portal.Alumni network helps with placements and Alumni events are announced on the website."
+      ]
+    },
+    {
+      "tag": "support",
+      "patterns": [
+        "support",
+        "students support",
+        "grievance",
+        "counseling",
+        "mental health support for student",
+        "student help"
+      ],
+      "responses": [
+        "Student support office is open 9am to 5pm.",
+        "student support includes academic and personal counseling.",
+        "Grievances can be submitted online.",
+        "Counseling services are available for all students.",
+        "Mental health support is confidential and free.",
+        "student help is available through the student support office , kindly contact m-team in library 4th floor"
+      ]
+    },
+    {
+      "tag": "joke",
+      "patterns": [
+        "joke",
+        "tell joke",
+        "funny",
+        "make me laugh",
+        "say something funny"
+      ],
+      "responses": [
+        "Why did the student eat his homework? \n Because the teacher said it was a piece of cake!",
+        "Why was the math book sad? \nBecause it had too many problems.",
+        "Why don't scientists trust atoms?\n Because they make up everything!",
+        "Why did the scarecrow win an award?\n Because he was outstanding in his field!",
+        "Why did the bicycle fall over?\n Because it was two-tired!",
+        "Why did the computer go to the doctor?\n Because it had a virus!",
+        "Why did the student bring a ladder to school?\n Because they wanted to go to high school!",
+        "Why did the cookie go to the nurse?\n Because it felt crummy!",
+        "Why did the music teacher go to jail?\n Because she got caught with too many sharp objects!",
+        "Why did the student bring a pencil to the party?\n Because they wanted to draw some attention!"
+      ]
+    },
+    {
+      "tag": "unknown",
+      "patterns": [
+        "abcdefghijklmnopqrstuvwxyz-={}-_+=[];:',./<>?  ",
+        "xyz",
+        "abc",
+        "random",
+        "not sure",
+        "confused",
+        "what"
+      ],
+      "responses": [
+        "Sorry, I didn't understand that. Can you rephrase?",
+        "I'm not sure about that. Please ask another question.",
+        "Can you provide more details?",
+        "Let me know if you need help with college info."
+      ]
+    }
   ]
 }

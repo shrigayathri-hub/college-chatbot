@@ -8,7 +8,7 @@ Try either of these methods :
 2. `virtualenv venv`
 
 --- OR ---
-
+ 
 in VS Code, run `Ctrl+Shift+P` ,s earch for _Create environment_ & create one. **But don't tick the `requirements.txt`**
 
 ## Installations (in terminal)
@@ -37,3 +37,29 @@ in VS Code, run `Ctrl+Shift+P` ,s earch for _Create environment_ & create one. *
 ## Finally you can use the project
 
 1. In terminal run this command `flask run --host=0.0.0.0 --port=5000`
+
+
+i have mentioned the basic of what my project do , so i need a detailed conservation like content to present for my final year project presenetaion to faculty make sure i sound technical and straight on pont delivery in indain tone, the project titile is : CHATBOT SYSTEM FOR COLLEGE INFORMATION AND SUPPORT, give literature survey with reference papers, AIM & OBJECTIVES OF THE PROJECT (Problem Statement) ,scope of the project , need for the currenet study , feasibility analysis, proposed methodology, CHOICE  OF  COMPONENTS  /  MODULES  / METHODS/TECHNIQUES EQUIPMENT  USED FOR  PROJECT DEVELOPMENT, design and software architecture , novelty of the project, 
+Chatbot for College Support Desk and Enquiry
+
+My project is an intelligent chatbot system designed to automatically understand and respond to user queries related to college support and enquiry., it focus on semester result based on student roll no , holiday as for particular year with pdf output , syllabus for course in pdf output , faculty available , campus & infrastructure details  , fee detail , admission related queriries ---join date , appplication form , course available with duration.
+
+The system receives a user’s message in natural language through a web-based chat interface.
+
+It processes the message using Natural Language Processing techniques:
+
+Tokenization to split the sentence into words.
+
+Stemming to reduce words to their root form.
+
+Bag-of-Words (BoW) converts the sentence into a fixed-size numeric vector.
+
+The processed data is passed into a Feedforward Neural Network (FNN) model which classifies the user’s intention by predicting a specific intent tag.
+
+The system applies a confidence threshold and returns the predefined response associated with the predicted intent tag.
+
+Responses can be plain text, links to files, or URLs for additional actions.
+
+The entire system is connected via a Flask REST API, allowing interaction between frontend and backend in real time.
+
+The neural network is trained using labeled datasets of intents, optimized with the Adam algorithm and CrossEntropy Loss to achieve efficient and accurate predictions.
