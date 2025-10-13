@@ -5,146 +5,230 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Students</title>
-    <style>
-      * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-body {
-  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
-  background: linear-gradient(135deg, #f5d837 0%, #f76b1c 100%);
-  padding: 2em;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-h1 {
-  color: #000;
-  font-size: 2.5rem;
-  font-weight: 900;
-  letter-spacing: 2px;
-  margin-bottom: 1rem;
-  background: none;
-  text-align: center;
-}
-main {
-  display: flex;
-  gap: 48px;
-  justify-content: center;
-  align-items: flex-start;
-  margin-bottom: 2rem;
-}
-section {
-  background: rgba(255,255,255,0.7);
-  border-radius: 18px;
-  box-shadow: 0 2px 24px rgba(0,0,0,0.07);
-  padding: 2em;
-  width: 100%;
-  max-width: 500px;
-}
-.all {
-  max-height: 90vh;
-  overflow: auto;
-}
-.all h2, section h2 {
-  color: #222;
-  font-size: 1.5rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-.all ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2em;
-  justify-content: center;
-  padding: 0;
-  margin: 0;
-}
-li {
-  background: rgba(255,255,255,0.45);
-  border-radius: 14px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.09);
-  padding: 1em;
-  min-width: 180px;
-  display: grid;
-  gap: 8px;
-  align-items: center;
-  justify-items: center;
-  margin-bottom: 1em;
-  border: 1px solid rgba(255,255,255,0.18);
-  transition: box-shadow 0.2s, transform 0.2s;
-}
-li:hover {
-  box-shadow: 0 6px 32px rgba(0,0,0,0.18);
-  transform: translateY(-6px) scale(1.04);
-}
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-  padding: 1em 0em;
-}
-label {
-  font-weight: 600;
-  color: #1979fa;
-}
-input[type="text"], input[type="number"], select {
-  width: 100%;
-  padding: .5em;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  margin-top: 0.3em;
-  font-size: 1rem;
-}
-button {
-  background: linear-gradient(90deg,#ffd700,#f76b1c);
-  color: #222;
-  padding: .5em 1.2em;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 700;
-  font-size: 1rem;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.09);
-  transition: background 0.2s, transform 0.2s;
-}
-button:hover {
-  background: linear-gradient(90deg,#f76b1c,#ffd700);
-  transform: scale(1.07);
-}
-a {
-  text-decoration: none;
-  color: inherit;
-}
-footer {
-  margin-top: auto;
-  color: #fff;
-  background: #222;
-  text-align: center;
-  padding: 0.5rem 0;
-  font-size: 1.1rem;
-  letter-spacing: 1px;
-  border-radius: 0 0 18px 18px;
-  box-shadow: 0 -2px 16px rgba(0,0,0,0.09);
-}
-@media (max-width: 900px) {
-  main {
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
+
+<style>
+  :root{
+    --bg-1: #f3f8ff;       /* very light blue background */
+    --panel: #ffffff;      /* card background */
+    --soft-blue: #8fbfff;  /* accent */
+    --accent: #4a90e2;     /* primary blue */
+    --muted: #6b7280;
+    --text: #051322;       /* near-black for readability */
+    --glass: rgba(255,255,255,0.6);
+    --radius: 14px;
+    --shadow-sm: 0 6px 18px rgba(10,40,80,0.06);
+    --shadow-lg: 0 18px 40px rgba(10,40,80,0.08);
+    --anim: 250ms cubic-bezier(.2,.9,.3,1);
   }
-  section {
-    max-width: 100%;
-    padding: 1em;
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family: Inter, 'Segoe UI', 'Montserrat', Arial, sans-serif;
+    background: linear-gradient(180deg,var(--bg-1),#ffffff 40%);
+    color:var(--text);
+    padding:28px;
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
   }
-  .all ul {
-    flex-direction: column;
-    gap: 1em;
+
+  /* Header */
+  h1{
+    color:var(--text);
+    font-size:1.5rem;
+    font-weight:800;
+    text-align:center;
+    margin-bottom:18px;
+    letter-spacing:0.4px;
+    position:relative;
   }
-}
-      </style>
+  /* subtle animated underline */
+  h1::after{
+    content:"";
+    display:block;
+    width:90px;
+    height:6px;
+    margin:10px auto 0;
+    border-radius:999px;
+    background:linear-gradient(90deg,var(--soft-blue),var(--accent));
+    opacity:0.95;
+    transform-origin:center;
+    animation: float 6s ease-in-out infinite;
+    box-shadow:0 8px 24px rgba(74,144,226,0.12);
+  }
+  @keyframes float { 0%,100%{ transform:translateY(0) } 50%{ transform:translateY(-4px) } }
+
+  main{
+    display:flex;
+    gap:24px;
+    justify-content:center;
+    align-items:flex-start;
+    width:100%;
+    margin-bottom:26px;
+    max-width:1200px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  /* left column: list */
+  section.all{
+    background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(243,248,255,0.98));
+    border-radius:var(--radius);
+    padding:20px;
+    width:68%;
+    min-width:320px;
+    max-height:72vh;
+    overflow:auto;
+    border:1px solid rgba(74,144,226,0.06);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--anim), transform var(--anim);
+  }
+  section.all:hover{ box-shadow: var(--shadow-lg) }
+
+  /* right column: form */
+  section:not(.all){
+    background:var(--panel);
+    border-radius:var(--radius);
+    box-shadow: var(--shadow-sm);
+    padding:26px;
+    width:32%;
+    min-width:280px;
+    border:1px solid rgba(10,40,80,0.04);
+    transition: box-shadow var(--anim), transform var(--anim);
+  }
+  section:not(.all):hover{ box-shadow: var(--shadow-lg) }
+
+  .all h2, section h2{
+    color:var(--accent);
+    font-size:1.05rem;
+    font-weight:800;
+    margin-bottom:12px;
+    text-align:left;
+  }
+
+  .all ul{
+    display:grid;
+    grid-template-columns: repeat(auto-fill,minmax(220px,1fr));
+    gap:12px;
+    list-style:none;
+    padding:0;
+    margin:0;
+  }
+
+  li{
+    background: linear-gradient(180deg,#ffffff,#fbfdff);
+    border-radius:12px;
+    padding:12px;
+    min-height:76px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    justify-content:center;
+    border-left:4px solid rgba(74,144,226,0.08);
+    transition: transform .18s cubic-bezier(.2,.9,.2,1), box-shadow .18s ease;
+  }
+  li p{ font-size:0.95rem; color:var(--text); margin:0; font-weight:600 }
+  li small{ color:var(--muted); font-size:0.85rem; font-weight:500 }
+  li:hover{
+    transform:translateY(-6px);
+    box-shadow: 0 20px 40px rgba(10,40,80,0.06);
+  }
+
+  .student-meta{ display:flex; gap:10px; align-items:center; justify-content:space-between }
+  .student-meta .id{ font-size:0.86rem; color:var(--muted); font-weight:600 }
+  .student-actions{ display:flex; gap:8px; }
+
+  /* Form controls */
+  form{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  label{
+    font-weight:700;
+    color:var(--accent);
+    font-size:0.95rem;
+  }
+  input[type="text"], input[type="number"], select{
+    width:100%;
+    padding:10px 12px;
+    border-radius:10px;
+    border:1px solid rgba(10,40,80,0.06);
+    font-size:1rem;
+    color:var(--text);
+    background:linear-gradient(180deg,#ffffff,#f7fbff);
+    transition: box-shadow var(--anim), border-color var(--anim);
+  }
+  input:focus, select:focus{
+    outline:none;
+    box-shadow:0 8px 26px rgba(74,144,226,0.08);
+    border-color:var(--accent);
+  }
+
+  /* Buttons */
+  button{
+    background: linear-gradient(90deg,var(--soft-blue),var(--accent));
+    color:#fff;
+    padding:10px 14px;
+    border-radius:10px;
+    border:none;
+    cursor:pointer;
+    font-weight:800;
+    box-shadow: 0 10px 26px rgba(74,144,226,0.12);
+    transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+  }
+  button:hover{ transform:translateY(-3px); box-shadow: 0 18px 44px rgba(74,144,226,0.16) }
+
+  a{ color:inherit; text-decoration:none; display:inline-block; width:100% }
+  button a{ color:#fff; text-decoration:none }
+
+  .update-btn{
+    background:transparent;
+    border:1px dashed rgba(10,40,80,0.06);
+    padding:8px 10px;
+    border-radius:8px;
+    color:var(--accent);
+    font-weight:700;
+  }
+
+  footer{
+    margin-top:auto;
+    text-align:center;
+    padding:12px 0;
+    color:rgba(5,19,34,0.6);
+    background:transparent;
+    font-size:0.95rem;
+  }
+
+  /* responsive adjustments */
+  @media (max-width:960px){
+    main{ flex-direction:column; gap:18px; padding:0 12px; }
+    section.all, section:not(.all){ width:100%; min-width:0; }
+    .all ul{ grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width:560px){
+    .all ul{ grid-template-columns: 1fr; }
+    section:not(.all){ padding:18px; }
+  }
+
+  /* gentle decorative shapes */
+  body::before, body::after{
+    content:"";
+    position:fixed;
+    width:360px;height:360px;
+    border-radius:50%;
+    filter:blur(60px);
+    z-index:0;pointer-events:none;opacity:0.5;
+  }
+  body::before{ left:-120px;top:-80px;background:linear-gradient(90deg,var(--soft-blue),#cfe9ff) }
+  body::after{ right:-140px;bottom:-120px;background:linear-gradient(90deg,#e9f5ff,#ffffff) }
+
+  /* ensure content above decorations */
+  main, header, footer, section, h1{ position:relative; z-index:1 }
+</style>
   </head>
   <body>
     <h1>Update Students Page</h1>

@@ -117,18 +117,16 @@ def students():
 
 @app.route("/students/update/<int:id>/", methods=['POST', 'GET'])
 def studentsupdate(id):
-    student = Student().query.get(id)
+    student = Student.query.get_or_404(id)
 
     if request.method == 'POST':
-        student.cgpa = request.form['cgpa']
-        student.name = request.form['name']
         student.id = request.form['studentID']
-        student.update(request.form)
+        student.name = request.form['name']
+        student.cgpa = request.form['cgpa']
         db.session.commit()
         return redirect(url_for('students'))
 
     return render_template('student_update.html', student=student)
-
 # ====================================
 #  COURSES
 # ====================================
@@ -153,16 +151,19 @@ def courses():
 
 @app.route("/courses/update/<int:id>/", methods=['POST', 'GET'])
 def coursesupdate(id):
-    course = Course().query.get(id)
+    course = Course.query.get_or_404(id)
 
     if request.method == 'POST':
-        syllabus_file = request.files['file']
-        course.syllabus = syllabus_file.read()
-        course.update(request.form)
+        course.name = request.form['name']
+        course.duration = request.form['duration']
+        syllabus_file = request.files.get('file')
+        if syllabus_file:
+            course.syllabus = syllabus_file.read()
         db.session.commit()
         return redirect(url_for('courses'))
 
     return render_template('course_update.html', course=course)
+
 
 
 # @app.route("/courses/syllabus/<int:id>/")
